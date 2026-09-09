@@ -1,0 +1,8 @@
+[package]
+name = "mini-map"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+geokernel.workspace = true
