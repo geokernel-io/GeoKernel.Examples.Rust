@@ -169,6 +169,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "camera-navigation"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "can-edit-check"
 version = "0.1.0"
 dependencies = [
