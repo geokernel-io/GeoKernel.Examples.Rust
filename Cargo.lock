@@ -425,9 +425,9 @@ dependencies = [
 
 [[package]]
 name = "geokernel"
-version = "1.5.26"
+version = "1.5.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f9158b47aa10f98565423fcc7de7d9869e2e62d72d82fbd66b161f73edc1c16"
+checksum = "b693309970d83f1dc31c40dc1654f34f2816aa206b954627962dc03e65736a3a"
 dependencies = [
  "geokernel-sys",
  "serde_json",
@@ -435,9 +435,9 @@ dependencies = [
 
 [[package]]
 name = "geokernel-sys"
-version = "1.5.26"
+version = "1.5.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05c082ef5bbc9e116f218e6bb0d268c463e661733599ace5ab78a828c0c49cc1"
+checksum = "1ffdfc8c4b819546bf9e7f91782639e00ff3f30bdb7f00a52cc78e624602d205"
 dependencies = [
  "libloading",
 ]
@@ -1055,6 +1055,15 @@ name = "tab-load"
 version = "0.1.0"
 dependencies = [
  "geokernel",
+ "serde_json",
+]
+
+[[package]]
+name = "terrain-loading"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
  "serde_json",
 ]
 
