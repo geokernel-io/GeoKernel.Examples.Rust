@@ -1059,6 +1059,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "terrain-and-imagery"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "terrain-loading"
 version = "0.1.0"
 dependencies = [
