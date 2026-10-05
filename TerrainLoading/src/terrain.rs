@@ -1,4 +1,4 @@
-//! Main-thread adapter for the Viewer3D C API shipped in SDK 1.5.30.
+//! Main-thread adapter for the Viewer3D C API shipped in SDK 1.5.32.
 use libloading::Library;
 use std::{
     ffi::{c_char, c_void, CStr, CString},

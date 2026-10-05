@@ -1,4 +1,4 @@
-//! Main-thread adapter for Viewer3D with the local, not yet published imagery API.
+//! Main-thread adapter for Viewer3D using the published GeoKernel 1.5.32 SDK.
 use libloading::Library;
 use std::{
     ffi::{c_char, c_void, CStr, CString},

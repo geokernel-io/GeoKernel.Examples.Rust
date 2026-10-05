@@ -1,0 +1,10 @@
+[package]
+name = "feature-picking"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+geokernel = "=1.5.32"
+serde_json = "1"
+libloading = "0.8"

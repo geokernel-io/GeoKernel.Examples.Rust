@@ -28,19 +28,7 @@ fn run(runtime: &Runtime) -> Result<()> {
     window.process_events();
     let parent = window.viewer().get_native_handle()?;
     let bin = PathBuf::from(std::env::var_os("GEOKERNEL_BIN").ok_or("SDK is not configured")?);
-    // Use the local imagery API until it is published. The remaining runtime
-    // dependencies still come from the downloaded SDK.
-    let local = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .join("../../GeoKernel/outputs/build/Release/GeoKernel.Viewer3D.dll");
-    let library = std::env::var_os("GEOKERNEL_VIEWER3D_LIBRARY")
-        .map(PathBuf::from)
-        .unwrap_or_else(|| {
-            if local.is_file() {
-                local
-            } else {
-                bin.join("GeoKernel.Viewer3D.dll")
-            }
-        });
+    let library = bin.join("GeoKernel.Viewer3D.dll");
     // This adapter is dropped before the owning window and Qt runtime.
     let mut terrain = unsafe { Terrain::new(parent, &library)? };
     terrain.resize()?;

@@ -3,6 +3,24 @@
 version = 4
 
 [[package]]
+name = "terrain-analysis"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
+name = "point-cloud-viewer"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "add-layers"
 version = "0.1.0"
 dependencies = [
@@ -157,6 +175,15 @@ name = "building-segmentation-inference"
 version = "0.1.0"
 dependencies = [
  "geokernel",
+ "serde_json",
+]
+
+[[package]]
+name = "buildings-3d"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
  "serde_json",
 ]
 
@@ -393,6 +420,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "feature-picking"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "find-delete-loops"
 version = "0.1.0"
 dependencies = [
@@ -434,9 +470,9 @@ dependencies = [
 
 [[package]]
 name = "geokernel"
-version = "1.5.30"
+version = "1.5.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b693309970d83f1dc31c40dc1654f34f2816aa206b954627962dc03e65736a3a"
+checksum = "49e3ae0fc187b891eaf3a5ae69bf2df114a5fea6b085846e184fe76aad42fcca"
 dependencies = [
  "geokernel-sys",
  "serde_json",
@@ -444,9 +480,9 @@ dependencies = [
 
 [[package]]
 name = "geokernel-sys"
-version = "1.5.30"
+version = "1.5.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ffdfc8c4b819546bf9e7f91782639e00ff3f30bdb7f00a52cc78e624602d205"
+checksum = "299b8969a591feb3d89777ec51a9deae7c7b1036898ce3f8d63a629b27d293c5"
 dependencies = [
  "libloading",
 ]
@@ -682,6 +718,33 @@ dependencies = [
 ]
 
 [[package]]
+name = "viewshed-analysis"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
+name = "elevation-profile"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
+name = "measurement-3d"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "memchr"
 version = "2.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -700,6 +763,15 @@ name = "mini-map"
 version = "0.1.0"
 dependencies = [
  "geokernel",
+]
+
+[[package]]
+name = "model-placement"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
 ]
 
 [[package]]
@@ -812,6 +884,15 @@ name = "raster-world-transform"
 version = "0.1.0"
 dependencies = [
  "geokernel",
+ "serde_json",
+]
+
+[[package]]
+name = "roads-on-terrain"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
  "serde_json",
 ]
 
@@ -1086,6 +1167,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "tiles-3d-streaming"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
 name = "tolerance-config"
 version = "0.1.0"
 dependencies = [
@@ -1308,5 +1398,23 @@ name = "zoom-to-selection"
 version = "0.1.0"
 dependencies = [
  "geokernel",
+ "serde_json",
+]
+
+[[package]]
+name = "layer-styling-and-filtering"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
+ "serde_json",
+]
+
+[[package]]
+name = "project-save-load"
+version = "0.1.0"
+dependencies = [
+ "geokernel",
+ "libloading",
  "serde_json",
 ]
