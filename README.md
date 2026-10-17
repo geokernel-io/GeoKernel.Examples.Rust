@@ -13,6 +13,17 @@ Official Rust examples for the GeoKernel native GIS SDK.
 
 Choose an example directory and run it with the included Cargo configuration or build scripts.
 
+## GlobeHello
+
+From `GlobeHello`, run `cargo run --locked --release`. The example automatically
+downloads and verifies the published Windows x64 SDK 1.5.35. Its own Cargo
+workspace and lockfile keep other examples' SDK versions unchanged.
+
+Atmosphere, Esri Satellite, DEM and Sunlight can be enabled independently from
+the Globe panel. All start off, matching the other GlobeHello examples. Includes
+the application icon, attribution/status bar and normal native resource cleanup.
+See [GlobeHello instructions](GlobeHello/README.md).
+
 ## Resources
 
 - [GeoKernel Website](https://geokernel.io)
@@ -82,3 +93,68 @@ Uses the published GeoKernel 1.5.32 package. No local SDK build or DLL override 
 ## ProjectSaveLoad
 
 Uses the published GeoKernel 1.5.32 package. No local SDK build or DLL override is required.
+
+## GlobeTerrainNavigation
+
+From `GlobeTerrainNavigation`, run `cargo run --locked --release`. The example
+prepares published SDK 1.5.35 automatically and opens the Barcelona terrain view.
+Includes Esri imagery, DEM, atmosphere, sunlight and nine camera controls.
+See [example instructions](GlobeTerrainNavigation/README.md).
+
+## GlobeVectorStyling
+
+[GlobeVectorStyling](GlobeVectorStyling/README.md) downloads real Sagrada Familia
+buildings and displays them over Esri imagery. Includes fills, category colors,
+labels, opacity, base color, camera reset and identification. Uses the published
+1.5.35 SDK with automatic download and checksum verification.
+
+~~~powershell
+cd GlobeVectorStyling
+cargo run --locked --release
+~~~
+
+## GlobeBuildings
+
+[GlobeBuildings](GlobeBuildings/README.md) displays real Sagrada Familia buildings
+with Esri imagery and atmosphere. Switch Extrude on/off and choose an illustrative
+height. It automatically downloads the published 1.5.35 SDK and sample data, and
+waits for GPU upload before re-enabling controls.
+
+```powershell
+cd GlobeBuildings
+cargo run --locked --release
+```
+
+## GlobeModelPlacement
+
+[GlobeModelPlacement](GlobeModelPlacement/README.md) automatically downloads the
+published 1.5.35 SDK and real Sagrada Familia model. Includes Esri, atmosphere,
+rotation, scale/height and remove/restore controls. See its README for the known
+SDK precision limitation affecting some placements.
+
+```powershell
+cd GlobeModelPlacement
+cargo run --locked --release
+```
+
+## GlobeRasterServices
+
+[GlobeRasterServices](GlobeRasterServices/README.md) automatically downloads SDK
+1.5.35 and real Sagrada Familia orthophoto/DEM. Both layers open with Esri and
+atmosphere; DEM color shading is disabled and there is no service toolbar.
+
+```powershell
+cd GlobeRasterServices
+cargo run --locked --release
+```
+
+## GlobeTerrainAnalysis
+
+[GlobeTerrainAnalysis](GlobeTerrainAnalysis/README.md) downloads SDK 1.5.35 and
+the real Barcelona DEM. Includes interactive line of sight, viewshed, slope/aspect
+and measurement with a fixed-height result panel.
+
+```powershell
+cd GlobeTerrainAnalysis
+cargo run --locked --release
+```
