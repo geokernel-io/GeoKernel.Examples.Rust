@@ -4,3 +4,6 @@
 /output/
 **/outputs/
 /packages/
+
+# Standalone example workspaces build in their own target directories.
+**/target/

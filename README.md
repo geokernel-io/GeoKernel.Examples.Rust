@@ -158,3 +158,20 @@ and measurement with a fixed-height result panel.
 cd GlobeTerrainAnalysis
 cargo run --locked --release
 ```
+
+## GeoAI task examples (published SDK 1.5.39)
+
+- [Dynamic World inference](DynamicWorldInference/README.md): fixed Sentinel-2 input, background classification, opacity slider and explicit Shapefile save dialog.
+- [HOTOSM building footprints](HotosmBuildingFootprints/README.md): fixed RGB source, threshold 0.50, polygon overlays and explicit Shapefile save dialog.
+- [GeoAI USA building footprints](GeoAiUsaBuildingFootprints/README.md): Mask R-CNN with confidence threshold 0.50, polygon overlays and explicit Shapefile save dialog.
+
+- [Prithvi flood analysis](PrithviFloodAnalysis/README.md): fixed input/model, asynchronous inference and explicit result export.
+- [PRUE field boundaries](PrueFieldBoundaries/README.md): fixed input/model, asynchronous inference and explicit result export.
+- [SEN2SR super resolution](Sen2srSuperResolution/README.md): fixed input/model, asynchronous inference and explicit result export.
+- [SAM3 segmentation](Sam3SegmentationInference/README.md): fixed input/model, asynchronous inference and explicit result export.
+
+```powershell
+cargo run --locked --release --manifest-path DynamicWorldInference/Cargo.toml
+```
+
+The seven GeoAI examples use standalone Cargo workspaces and `GeoAiCommon`, with geokernel 1.5.39 from crates.io. First launch downloads and SHA-256 verifies the matching Windows SDK from GitHub Releases. No sibling SDK checkout is required.

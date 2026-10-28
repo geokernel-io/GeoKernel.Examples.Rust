@@ -1,0 +1,10 @@
+[package]
+name = "sam3-segmentation-inference"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+geokernel-geoai-examples = { path = "../GeoAiCommon" }
