@@ -13,6 +13,14 @@ Official Rust examples for the GeoKernel native GIS SDK.
 
 Choose an example directory and run it with the included Cargo configuration or build scripts.
 
+## BuildingChangeReview
+
+From `BuildingChangeReview`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+The example uses the published SDK 1.5.39 and automatically prepares Oosterwold
+2016/2025 imagery and the HOTOSM model. Includes synchronized maps, change
+candidates, vertex editing, review decisions and approved-only GeoJSON export.
+See [BuildingChangeReview instructions](BuildingChangeReview/README.md).
+
 ## GlobeHello
 
 From `GlobeHello`, run `cargo run --locked --release`. The example automatically
