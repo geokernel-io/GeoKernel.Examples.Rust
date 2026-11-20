@@ -1,0 +1,20 @@
+{
+  "url": "https://github.com/geokernel-io/GeoKernel.SampleData/releases/download/v1/zurich_dsm_to_dtm_v2.zip",
+  "archive": "zurich_dsm_to_dtm_v2.zip",
+  "cache": "zurich-dsm-to-dtm-v2",
+  "bytes": 3681613,
+  "sha256": "91962e0029c57738ed34d2bdef8d104ef751f7b988a582571faddf658a2b0331",
+  "files": {
+    "ATTRIBUTION.txt": "66ee23a3a31d2d88f4f1962860f66c0fc57fa1962f944b1aebacdd758010eb18",
+    "dsm.tif": "8a80d526806cc274d2f90d322d99b52d93857358e92c5c8563d5efd90c313d76",
+    "dtm_ai.tif": "cdadd22754a91a2b93484c2ecef74c9a4fa17f95bd52626d1492e03e23036de4",
+    "dtm_classical.tif": "c0b9f1438058bdf0f445d32b0334f1c69ff86fa16de3596695f29adb13569cf3",
+    "dtm_reference.tif": "bfb17932755fe5be021e46a964e4849ed6e90be3f7459e6626385c31eb37631a",
+    "MODEL-LICENSE-CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "neutral_surface.tif": "4a540153989047840efb3f45108d8b04571a44d6d9d690acb2fa3833f81b2606",
+    "proj-data/proj.db": "6b8ddc8c2c5900ce9db1ead190212b36557aa7e4c80f891d656ce5daea5ca6f4",
+    "PROJ-LICENSE.txt": "6a8f30793e877d32e3f88b972f0970a051a3b5a26cd057d3993cb51e21c43319",
+    "README.txt": "443920fe4c6877e330c9876e2a5b8b4269fa2b0b5fe4582a8475cd1f11cf9bc5",
+    "source-manifest.json": "565e39757a76ee93b42a90bf26b3547c736cce1f457395785ee67ab2a99c1287"
+  }
+}

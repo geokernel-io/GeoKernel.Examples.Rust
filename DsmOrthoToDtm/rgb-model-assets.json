@@ -1,0 +1,15 @@
+{
+  "url": "https://pub-00d214f25f754884b22349c19ac37bbf.r2.dev/geokernel-models/davpergan-dtm-dsm-gan-rgb-grad-fm-geokernel-onnx-v1.zip",
+  "archive": "davpergan-dtm-dsm-gan-rgb-grad-fm-geokernel-onnx-v1.zip",
+  "cache": "rgb-grad-fm-onnx-v1",
+  "bytes": 202303593,
+  "sha256": "bd2ed0087c4c1fec3d8b88329dbb51d954bd63e8a71b9f77905c4ad33055d87a",
+  "files": {
+    "model.onnx": "5042d5abac64d6b1764265924c9910807e3a5efee7e1b9517fc9d86bf4d0e3a3",
+    "LICENSE-weights-CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "conversion-verification.json": "c5bf18cb2b6934e2634ee2ece0607068a88e90413d77da6a49dc7ae9d646dee9",
+    "native-parity-sdk-1.5.40.json": "9dd49ee7522277fa431af77edad492eac1a875a3ef45a885979f5466020d9983",
+    "geokernel-model.json": "cb4a62150a620216a2c7aa310fbf223f68b14b76a9cdca400bf50c1b16bf2f44",
+    "MODEL_CARD.md": "1c0e391c1eba38feb6486590e7b21a26fa31db32a5072f67653d51cf7f88c397"
+  }
+}

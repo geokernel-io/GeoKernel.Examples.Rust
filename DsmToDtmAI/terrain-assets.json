@@ -1,0 +1,36 @@
+{
+  "cache": "zurich-full-1km-v1",
+  "sources": {
+    "dsm": {
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swisssurface3d-raster/swisssurface3d-raster_2018_2677-1251/swisssurface3d-raster_2018_2677-1251_0.5_2056_5728.tif",
+      "file": "dsm.tif",
+      "bytes": 13876301,
+      "sha256": "a0b9e3d18f47646bb7bd8558d4bdfd9addc5ff56cb0a5fe41676ea6bf0bdca5b"
+    },
+    "reference": {
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2019_2677-1251/swissalti3d_2019_2677-1251_0.5_2056_5728.tif",
+      "file": "reference.tif",
+      "bytes": 17136500,
+      "sha256": "cacf7e13cf535c0676114e95436b9f606031eda197790b91fe586e8cc7740071"
+    }
+  },
+  "width": 2000,
+  "height": 2000,
+  "pixel_m": 0.5,
+  "epsg": 2056,
+  "bounds": [
+    2677000,
+    1251000,
+    2678000,
+    1252000
+  ],
+  "comparison_crop_bounds": [
+    2677100,
+    1251350,
+    2677350,
+    1251600
+  ],
+  "attribution": "Federal Office of Topography swisstopo",
+  "dsm_filename_year": 2018,
+  "reference_filename_year": 2019
+}

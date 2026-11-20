@@ -13,6 +13,53 @@ Official Rust examples for the GeoKernel native GIS SDK.
 
 Choose an example directory and run it with the included Cargo configuration or build scripts.
 
+## DsmToDtm
+
+From `DsmToDtm`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Uses the published SDK 1.5.40. Ground beneath buildings: two linked native 3D views
+of an original DSM and prepared classical/AI terrain, numeric height transition,
+fixed transect profile and reference metrics. The pinned Zurich sample is
+downloaded and SHA-256 verified automatically; no inference runs.
+See [DsmToDtm instructions](DsmToDtm/README.md).
+
+## DsmToDtmProfile
+
+From `DsmToDtmProfile`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Uses the published SDK 1.5.40. Draw your own A → B transect on two linked native 2D
+relief maps and compare DSM, classical, AI and reference heights on one chart, with an
+error mode, hover inspection, line RMSE/MAE and CSV export. Reuses the verified
+DsmToDtm sample. See [DsmToDtmProfile instructions](DsmToDtmProfile/README.md).
+
+## DsmToDtmAccuracy
+
+From `DsmToDtmAccuracy`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Uses the published SDK 1.5.40. Three linked native 2D maps of the DSM and shared-scale
+classical/AI reference errors; area selection and presets, RMSE/MAE/bias/P95, histogram,
+pixel probe and JSON report. See [DsmToDtmAccuracy instructions](DsmToDtmAccuracy/README.md).
+
+## DsmToDtmProcessing
+
+From `DsmToDtmProcessing`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Run the classical multiscale-morphological + TIN conversion live with presets and six
+parameters; DSM, new DTM and removed-height/quality/reference-error maps, scores, pixel
+probe and GeoTIFF/QA/JSON export. See [DsmToDtmProcessing instructions](DsmToDtmProcessing/README.md).
+
+## DsmToDtmAI
+
+From `DsmToDtmAI`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Run the experimental pix_grad model through GeoKernel.AI and the classical filter on the same
+full 1 km Zurich DSM; relief/removed-height/error maps, full-input and shared-crop scores,
+pixel probe and a staged comparison-folder export. Model and terrain are downloaded and
+hash-verified on first start. See [DsmToDtmAI instructions](DsmToDtmAI/README.md).
+
+## DsmOrthoToDtm
+
+From `DsmOrthoToDtm`, run `cargo run --locked --release` or `./run.ps1 -Release`.
+Compare classical, DSM-only pix_grad and DSM+RGB rgb_grad_fm terrain estimates on the same
+full Zurich DSM; orthophoto/DSM input context, four linked 2D maps, full-input and shared-crop
+scores, pixel probe and a staged comparison-folder export. See
+[DsmOrthoToDtm instructions](DsmOrthoToDtm/README.md).
+
 ## BuildingChangeReview
 
 From `BuildingChangeReview`, run `cargo run --locked --release` or `./run.ps1 -Release`.

@@ -1,0 +1,15 @@
+{
+  "url": "https://pub-00d214f25f754884b22349c19ac37bbf.r2.dev/geokernel-models/davpergan-dtm-dsm-gan-pix-grad-geokernel-onnx-v1.zip",
+  "archive": "davpergan-dtm-dsm-gan-pix-grad-geokernel-onnx-v1.zip",
+  "cache": "pix-grad-onnx-v1",
+  "bytes": 200717538,
+  "sha256": "0ee47ae568bd0e3af5896c4421a688958ad156b017f911ab03623383cd6aed60",
+  "files": {
+    "model.onnx": "e400e27f6afc75bcf4e1a61432ee9557529683903996dd953d3e8e3fcbe90eb6",
+    "LICENSE-weights-CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "conversion-verification.json": "8620188db117293314c8739ecb2aec6fdf12e5e0cd365a5f665edb1cab655ded",
+    "native-parity-sdk-1.5.40.json": "793995ae138020db1add72b4c3c2cea1de97bb96822438592c74bae614c4fffc",
+    "geokernel-model.json": "04b830908054db9ff4ec4521638cb8e6185c06869a5317dcacf38cf2b4af328e",
+    "MODEL_CARD.md": "e5da102f2c74c930431d0209411e8ed2aaeded031c0486256277d98936906a9e"
+  }
+}

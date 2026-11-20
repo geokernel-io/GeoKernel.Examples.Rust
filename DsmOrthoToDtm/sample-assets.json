@@ -1,0 +1,17 @@
+{
+  "url": "https://github.com/geokernel-io/GeoKernel.SampleData/releases/download/v1/zurich_dsm_ortho_to_dtm_v1.zip",
+  "archive": "zurich_dsm_ortho_to_dtm_v1.zip",
+  "cache": "zurich-dsm-ortho-to-dtm-v1",
+  "bytes": 33020943,
+  "sha256": "b12db41fc66c96b8c9b46a0e1fb6f3f089516234cad82ba8c4507f29f5d42289",
+  "files": {
+    "dsm.tif": "ccf85407132874ac1201ded64633c84a93b2fc0cfeeee87608ae42d71699e5d4",
+    "reference.tif": "a2c84c316569ac9610064ab6f8d5adb3d55a98b5d0b8a33924ca953416ae67e8",
+    "ortho_rgb.tif": "a400d5e3e84ea9b162a50dbf78827322f6b3e83540ef5aab140aa36d6ecdd40f",
+    "proj-data/proj.db": "6b8ddc8c2c5900ce9db1ead190212b36557aa7e4c80f891d656ce5daea5ca6f4",
+    "PROJ-LICENSE.txt": "6a8f30793e877d32e3f88b972f0970a051a3b5a26cd057d3993cb51e21c43319",
+    "source-manifest.json": "68b6e90b69b2c840b440f4ed414703672149563c19ded7f6bf6d2c4582d137a7",
+    "ATTRIBUTION.txt": "0b3967212470d430c3ebd8d02690a695abcbdebe26f69f8943f6fa963ae4f5f4",
+    "README.txt": "3f6c3e0187f252fac5ea95e8fc8dc9ff62787e9fdb6421c873a3b773cca436a9"
+  }
+}
