@@ -7,3 +7,8 @@
 
 # Standalone example workspaces build in their own target directories.
 **/target/
+
+# Patched against GeoKernel.Rust sources until the agent API is published.
+AgentMapAssistant/Cargo.lock
+# Spatial index sidecars the SDK writes next to vector data
+*.pgidx

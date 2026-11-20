@@ -13,6 +13,14 @@ Official Rust examples for the GeoKernel native GIS SDK.
 
 Choose an example directory and run it with the included Cargo configuration or build scripts.
 
+## AgentMapAssistant
+
+From `AgentMapAssistant`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run
+`./run.ps1 -Release`. Ask for map operations in plain language; an LLM (or the offline demo's
+prepared plans) proposes a workflow DSL v2 plan that GeoKernel validates, previews, runs after
+confirmation when it changes data, undoes and records with hash-chained provenance. Needs
+geokernel newer than 1.5.40. See [AgentMapAssistant instructions](AgentMapAssistant/README.md).
+
 ## DsmToDtm
 
 From `DsmToDtm`, run `cargo run --locked --release` or `./run.ps1 -Release`.

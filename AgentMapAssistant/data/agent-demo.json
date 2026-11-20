@@ -1,0 +1,75 @@
+{
+  "description": "Prepared plans for the offline demo of the AgentMapAssistant examples. Each plan is a workflow DSL v2 proposal exactly as an LLM would return it; it is validated, shown and confirmed like any other proposal.",
+  "groundingNotes": "Synthetic neighbourhood in EPSG:4326. buildings: ref, use (residential, commercial, mixed, public), floors, year_built, status (in use, vacant, demolished). schools: name, level, students. parks: name, trees. streets: name, class (primary, secondary, residential), lanes.",
+  "requests": [
+    {
+      "request": "Show the buildings within 150 m of a school in red",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "school_zone", "operation": "buffer", "parameters": {"input": "schools", "distance": 150, "unit": "meters", "dissolve": true}},
+          {"id": "near_schools", "operation": "select_by_location", "parameters": {"layer": "buildings", "geometry": {"$ref": "school_zone"}, "predicate": "intersects"}},
+          {"id": "paint", "operation": "set_style", "parameters": {"layer": {"$ref": "near_schools"}, "fillColor": "#d7301f", "strokeColor": "#7f0000", "opacity": 0.9}},
+          {"id": "zone_style", "operation": "set_style", "parameters": {"layer": {"$ref": "school_zone"}, "fillColor": "#fdae6b40", "strokeColor": "#e6550d", "strokeWidth": 2}}
+        ]
+      }
+    },
+    {
+      "request": "Label the buildings taller than 8 floors with their floor count",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "tall", "operation": "filter", "parameters": {"layer": "buildings", "expression": "floors > 8"}},
+          {"id": "paint", "operation": "set_style", "parameters": {"layer": {"$ref": "tall"}, "fillColor": "#6a51a3", "strokeColor": "#3f007d"}},
+          {"id": "labels", "operation": "set_labels", "parameters": {"layer": {"$ref": "tall"}, "field": "floors"}}
+        ]
+      }
+    },
+    {
+      "request": "How many buildings of each use are there, and how many floors in total?",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "by_use", "operation": "aggregate", "parameters": {"layer": "buildings", "groupBy": ["use"], "metrics": {"floors": "sum"}}}
+        ]
+      }
+    },
+    {
+      "request": "What is the total park area in hectares?",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "park_area", "operation": "measure", "parameters": {"geometry": "parks", "kind": "area", "unit": "hectares"}},
+          {"id": "show", "operation": "zoom_to", "parameters": {"target": "parks"}}
+        ]
+      }
+    },
+    {
+      "request": "Flag the buildings built before 1975 near the primary avenue for inspection",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "avenue", "operation": "filter", "parameters": {"layer": "streets", "expression": "class = 'primary'"}},
+          {"id": "corridor", "operation": "buffer", "parameters": {"input": {"$ref": "avenue"}, "distance": 60, "unit": "meters"}},
+          {"id": "corridor_style", "operation": "set_style", "parameters": {"layer": {"$ref": "corridor"}, "fillColor": "#9ecae133", "strokeColor": "#4292c6", "strokeWidth": 2}},
+          {"id": "along_avenue", "operation": "select_by_location", "parameters": {"layer": "buildings", "geometry": {"$ref": "corridor"}, "predicate": "intersects"}},
+          {"id": "old", "operation": "filter", "parameters": {"layer": {"$ref": "along_avenue"}, "expression": "year_built < 1975"}},
+          {"id": "flag", "operation": "update_attributes", "parameters": {"layer": {"$ref": "old"}, "expression": "year_built < 1975", "values": {"inspection": "required"}}},
+          {"id": "paint", "operation": "set_style", "parameters": {"layer": {"$ref": "old"}, "fillColor": "#fd8d3c", "strokeColor": "#a63603"}},
+          {"id": "labels", "operation": "set_labels", "parameters": {"layer": {"$ref": "old"}, "field": "year_built"}}
+        ]
+      }
+    },
+    {
+      "request": "Make an editable copy of the buildings and delete the demolished ones from it",
+      "proposal": {
+        "schemaVersion": 2,
+        "steps": [
+          {"id": "working_copy", "operation": "filter", "parameters": {"layer": "buildings", "expression": "floors >= 0"}},
+          {"id": "remove_demolished", "operation": "delete_features", "parameters": {"layer": {"$ref": "working_copy"}, "expression": "status = 'demolished'"}},
+          {"id": "hide_source", "operation": "set_visibility", "parameters": {"layer": "buildings", "visible": false}}
+        ]
+      }
+    }
+  ]
+}
