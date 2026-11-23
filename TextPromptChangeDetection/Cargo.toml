@@ -1,0 +1,14 @@
+[package]
+name = "text-prompt-change-detection"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# Standalone workspace. The change task API (Runtime::change_tasks) ships after geokernel 1.5.40;
+# until that release, patch in the GeoKernel.Rust sources (see run.ps1 / README).
+[workspace]
+
+[dependencies]
+geokernel = "1.5.40"
+serde_json = "1"
+sha2 = "0.10.9"

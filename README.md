@@ -21,6 +21,14 @@ prepared plans) proposes a workflow DSL v2 plan that GeoKernel validates, previe
 confirmation when it changes data, undoes and records with hash-chained provenance. Needs
 geokernel newer than 1.5.40. See [AgentMapAssistant instructions](AgentMapAssistant/README.md).
 
+## TextPromptChangeDetection
+
+From `TextPromptChangeDetection`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run
+`./run.ps1 -Release`. Type what to look for ("building", "greenhouse") and see where it appeared
+and disappeared between two dates or over a 9-date series, with a timeline, a QA review queue and
+GeoPackage export (SAM 3, objects tracked from date to date). Needs geokernel newer than 1.5.40.
+See [TextPromptChangeDetection instructions](TextPromptChangeDetection/README.md).
+
 ## DsmToDtm
 
 From `DsmToDtm`, run `cargo run --locked --release` or `./run.ps1 -Release`.
