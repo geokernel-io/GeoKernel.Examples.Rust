@@ -21,6 +21,14 @@ prepared plans) proposes a workflow DSL v2 plan that GeoKernel validates, previe
 confirmation when it changes data, undoes and records with hash-chained provenance. Needs
 geokernel newer than 1.5.40. See [AgentMapAssistant instructions](AgentMapAssistant/README.md).
 
+## AgentPlannerBasics
+
+From `AgentPlannerBasics`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run `./run.ps1 -Release`.
+Five lessons send map requests through the planner one stage at a time (proposal, validation, execution,
+provenance): the same plan gives the same result, bad proposals never run, confirmation is bound to one
+exact plan and the provenance record shows any change. Needs geokernel newer than 1.5.40.
+See [AgentPlannerBasics instructions](AgentPlannerBasics/README.md).
+
 ## TextPromptChangeDetection
 
 From `TextPromptChangeDetection`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run

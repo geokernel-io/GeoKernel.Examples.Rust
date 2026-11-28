@@ -1,0 +1,67 @@
+{
+  "description": "Lessons of the AgentPlannerBasics examples. Each proposal is a workflow DSL v2 plan exactly as an LLM would return it (or a bad one, as a careless or manipulated model might return it); GeoKernel validates every proposal the same way.",
+  "groundingNotes": "Synthetic neighbourhood in EPSG:4326. buildings: ref, use (residential, commercial, mixed, public), floors, year_built, status (in use, vacant, demolished). schools: name, level, students. parks: name, trees. streets: name, class (primary, secondary, residential), lanes.",
+  "basic": {
+    "title": "A plan that reads data and changes the view",
+    "request": "Show the buildings within 150 m of a school in red",
+    "proposal": {
+      "schemaVersion": 2,
+      "steps": [
+        {"id": "school_zone", "operation": "buffer", "parameters": {"input": "schools", "distance": 150, "unit": "meters", "dissolve": true}},
+        {"id": "near_schools", "operation": "select_by_location", "parameters": {"layer": "buildings", "geometry": {"$ref": "school_zone"}, "predicate": "intersects"}},
+        {"id": "paint", "operation": "set_style", "parameters": {"layer": {"$ref": "near_schools"}, "fillColor": "#d7301f", "strokeColor": "#7f0000", "opacity": 0.9}},
+        {"id": "zone_style", "operation": "set_style", "parameters": {"layer": {"$ref": "school_zone"}, "fillColor": "#fdae6b40", "strokeColor": "#e6550d", "strokeWidth": 2}}
+      ]
+    }
+  },
+  "rejected": [
+    {
+      "title": "A chat answer instead of a plan",
+      "why": "Only a JSON workflow object is accepted; prose never reaches the executor.",
+      "proposal": "Sure! I will buffer the schools by 150 m and select the buildings around them."
+    },
+    {
+      "title": "An operation outside the catalog",
+      "why": "Operations come from a fixed allow-list; there is no way to run code.",
+      "proposal": {"schemaVersion": 2, "steps": [{"id": "s1", "operation": "run_python", "parameters": {"code": "import os; os.remove('buildings.geojson')"}}]}
+    },
+    {
+      "title": "An extra parameter carrying SQL",
+      "why": "Every parameter of every operation is declared; unknown ones are refused.",
+      "proposal": {"schemaVersion": 2, "steps": [{"id": "s1", "operation": "filter", "parameters": {"layer": "buildings", "expression": "floors > 8", "sql": "DROP TABLE buildings"}}]}
+    },
+    {
+      "title": "SQL hidden in an attribute filter",
+      "why": "Filters use a small expression language without writes; it is parsed before anything runs.",
+      "proposal": {"schemaVersion": 2, "steps": [{"id": "s1", "operation": "filter", "parameters": {"layer": "buildings", "expression": "floors > 8; DELETE FROM buildings"}}]}
+    },
+    {
+      "title": "A reference to a step that does not exist",
+      "why": "A step can only use the output of an earlier step of the same plan.",
+      "proposal": {"schemaVersion": 2, "steps": [{"id": "s1", "operation": "set_style", "parameters": {"layer": {"$ref": "everything"}, "fillColor": "#ff0000"}}]}
+    },
+    {
+      "title": "The model claims the user confirmed",
+      "why": "Confirmation comes from the host, never from the proposal.",
+      "proposal": {"schemaVersion": 2, "confirmed": true, "steps": [{"id": "s1", "operation": "delete_features", "parameters": {"layer": "buildings", "expression": "floors >= 0"}}]}
+    }
+  ],
+  "confirm": {
+    "title": "Changing data needs confirmation of this exact plan",
+    "request": "Flag the buildings built before 1975 near the primary avenue for inspection",
+    "proposal": {
+      "schemaVersion": 2,
+      "steps": [
+        {"id": "avenue", "operation": "filter", "parameters": {"layer": "streets", "expression": "class = 'primary'"}},
+        {"id": "corridor", "operation": "buffer", "parameters": {"input": {"$ref": "avenue"}, "distance": 60, "unit": "meters"}},
+        {"id": "along_avenue", "operation": "select_by_location", "parameters": {"layer": "buildings", "geometry": {"$ref": "corridor"}, "predicate": "intersects"}},
+        {"id": "old", "operation": "filter", "parameters": {"layer": {"$ref": "along_avenue"}, "expression": "year_built < 1975"}},
+        {"id": "flag", "operation": "update_attributes", "parameters": {"layer": {"$ref": "old"}, "expression": "year_built < 1975", "values": {"inspection": "required"}}},
+        {"id": "paint", "operation": "set_style", "parameters": {"layer": {"$ref": "old"}, "fillColor": "#fd8d3c", "strokeColor": "#a63603"}}
+      ]
+    },
+    "changedTitle": "The same plan with one value changed (inspection = demolish)",
+    "changedStep": "flag",
+    "changedValues": {"inspection": "demolish"}
+  }
+}
