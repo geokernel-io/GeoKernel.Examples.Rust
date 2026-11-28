@@ -29,6 +29,20 @@ and disappeared between two dates or over a 9-date series, with a timeline, a QA
 GeoPackage export (SAM 3, objects tracked from date to date). Needs geokernel newer than 1.5.40.
 See [TextPromptChangeDetection instructions](TextPromptChangeDetection/README.md).
 
+## SimilaritySearch
+
+From `SimilaritySearch`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run
+`./run.ps1 -Release`. Pick a solar park, lake, town or field (or click the map) and rank every
+80 m cell of Flevoland by AlphaEarth embedding similarity, with a heat map and ranked matches.
+Needs geokernel newer than 1.5.40. See [SimilaritySearch instructions](SimilaritySearch/README.md).
+
+## VlmImageQA
+
+From `VlmImageQA`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run `.\run.ps1 -Release`.
+Pick an area of an aerial photo; Florence-2 describes it and marks objects named in plain language on this
+computer, and a remote vision model (optional) answers questions about it. Needs geokernel newer than 1.5.40.
+See [VlmImageQA instructions](VlmImageQA/README.md).
+
 ## DsmToDtm
 
 From `DsmToDtm`, run `cargo run --locked --release` or `./run.ps1 -Release`.

@@ -14,7 +14,7 @@ GeoKernel.Rust sources and use a native runtime with the change API:
 
 ```powershell
 $env:GEOKERNEL_RUST_SOURCE = "D:\projects\GeoKernel.Rust"
-$env:GEOKERNEL_BIN = "D:\projects\GeoKernel\outputsuild\Release"
+$env:GEOKERNEL_BIN = "D:\projects\GeoKernel\outputs\build\Release"
 ./run.ps1 -Release
 ```
 
