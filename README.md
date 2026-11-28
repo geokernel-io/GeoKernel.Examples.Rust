@@ -44,6 +44,13 @@ From `SimilaritySearch`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then r
 80 m cell of Flevoland by AlphaEarth embedding similarity, with a heat map and ranked matches.
 Needs geokernel newer than 1.5.40. See [SimilaritySearch instructions](SimilaritySearch/README.md).
 
+## SpatialEmbeddingSearch
+
+From `SpatialEmbeddingSearch`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run `./run.ps1 -Release`.
+Search AlphaEarth embeddings of the Netherlands (3 years, 2 UTM zones) for places like a seed place, limited
+to one CRS, extent and time span, with the records each filter rejected. Needs geokernel newer than 1.5.40.
+See [SpatialEmbeddingSearch instructions](SpatialEmbeddingSearch/README.md).
+
 ## VlmImageQA
 
 From `VlmImageQA`, set `GEOKERNEL_RUST_SOURCE` and `GEOKERNEL_BIN`, then run `.\run.ps1 -Release`.
